@@ -2,5 +2,25 @@
 name = "diffusion-cpp-rs"
 version = "0.1.0"
 edition = "2024"
+rust-version = "1.85"
+description = "Safe Rust bindings for stable-diffusion.cpp"
+license = "MIT"
+repository = "https://github.com/jiabochao/diffusion-cpp-rs"
+readme = "README.md"
+
+[workspace]
+members = ["diffusion-cpp-sys"]
+resolver = "3"
+
+[features]
+default = []
+metal = ["diffusion-cpp-sys/metal"]
+cuda = ["diffusion-cpp-sys/cuda"]
+vulkan = ["diffusion-cpp-sys/vulkan"]
+native = ["diffusion-cpp-sys/native"]
 
 [dependencies]
+diffusion-cpp-sys = { path = "diffusion-cpp-sys", version = "0.1.0" }
+
+[dev-dependencies]
+png = "0.18"
