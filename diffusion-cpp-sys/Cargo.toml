@@ -1,0 +1,21 @@
+[package]
+name = "diffusion-cpp-sys"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Low-level bindings to the stable-diffusion.cpp C API"
+license = "MIT"
+repository = "https://github.com/jiabochao/diffusion-cpp-rs"
+links = "stable-diffusion"
+build = "build.rs"
+
+[features]
+default = []
+metal = []
+cuda = []
+vulkan = []
+native = []
+
+[build-dependencies]
+bindgen = "0.72"
+cmake = "0.1"
